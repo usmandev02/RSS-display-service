@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RSS Feed App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Feed Selection -->
+  <section class="feed-selector">
+    <h1>RSS Feeds</h1>
+    <p>Select a feed to load:</p>
+    <div class="btn-group">
+      <button class="btn" data-url="https://feeds.bbci.co.uk/news/rss.xml">BBC News</button>
+      <button class="btn" data-url="https://www.buzzfeed.com/uk/index.xml">Buzzfeed</button>
+      <button class="btn" data-url="https://fliplet.com/feed">Fliplet</button>
+      <button class="btn" data-url="https://www.ft.com/news-feed">FT</button>
+    </div>
+  </section>
+
+  <!-- Alerts -->
+  <div class="alert alert-loading hidden">Loading...</div>
+  <div class="alert alert-error hidden">
+    <h5>Error Loading Feed</h5>
+    <p>Unable to load the selected RSS feed. Please try again later.</p>
+  </div>
+
+  <!-- Feed Container -->
+  <div class="feed-container">
+    <!-- Feed items will be injected here -->
+  </div>
+
+  <!-- Pagination -->
+  <nav class="pagination-nav">
+    <ul class="pagination">
+      <!-- Pagination items will be injected here -->
+    </ul>
+  </nav>
+
+  <!-- Handlebars Template -->
+  <script id="feed-item-template" type="text/x-handlebars-template">
+    <div class="feed-item">
+      {{#if thumbnail}}
+        <img src="{{thumbnail}}" alt="Thumbnail">
+      {{/if}}
+      <h2>{{title}}</h2>
+      <p>{{{description}}}</p>
+      <a href="{{link}}" target="_blank">Read more</a>
+      <span class="pub-date">{{formattedDate}}</span>
+    </div>
+  </script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/min/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

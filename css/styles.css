@@ -1,0 +1,239 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .feed-selector {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .btn-group .btn {
+    margin: 0 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .alert-loading {
+    background-color: #e7f3fe;
+    color: #31708f;
+  }
+  
+  .alert-error {
+    background-color: #f2dede;
+    color: #a94442;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .feed-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feed-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .feed-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .pub-date {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+  }
+  
+  .pagination-nav {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+  }
+  
+  .pagination li button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+   */
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #f7f9fc;
+    color: #333;
+  }
+  
+  .feed-selector h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+  }
+  
+  .feed-selector p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .btn-group .btn {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-group .btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .alert-loading {
+    background-color: #e7f3fe;
+    color: #31708f;
+  }
+  
+  .alert-error {
+    background-color: #f2dede;
+    color: #a94442;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .feed-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 1024px) {
+    .feed-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .feed-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .feed-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+  }
+  .feed-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feed-item h2 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+  }
+  
+  .feed-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .feed-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .feed-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .feed-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .pub-date {
+    display: block;
+    margin-top: 12px;
+    color: #888;
+    font-size: 0.85rem;
+  }
+  
+  .pagination-nav {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .pagination {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .pagination li button {
+    padding: 8px 14px;
+    background-color: #fff;
+    border: none;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .pagination li:last-child button {
+    border-right: none;
+  }
+  
+  .pagination li button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pagination li.active button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+  }
+  
